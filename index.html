@@ -13,11 +13,11 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <?php include 'DB_CONNECT/db_connect.php'; ?>
-    <?php include 'contact.php'; ?>
+
 </head>
 
 <body>
+    <div id="preloader"></div>
     <div class="home" id="home">
         <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
@@ -142,7 +142,8 @@
                             <div class="link">
                                 <a href="https://dhruvinkapadiya.github.io/Architacture_Portfolio/">
                                     <h1>Architacture_Portfolio</h1>
-                                    <p>A modern architecture portfolio showcasing innovative designs, projects, and creative solutions with sleek aesthetics.</p>
+                                    <p>A modern architecture portfolio showcasing innovative designs, projects, and
+                                        creative solutions with sleek aesthetics.</p>
                                 </a>
                             </div>
                         </div>
@@ -298,7 +299,7 @@
                         <div id="phone" data-aos="fade-up">
                             <i class="fa-solid fa-phone" style="float:left;"></i>
                             <h3>Phone :</h3>
-                            <p>+91 9979709430</p>
+                            <p>+91 946134486</p>
                         </div>
 
                         <div id="email" class="my-5" data-aos="fade-up">
@@ -345,6 +346,13 @@
         crossorigin="anonymous"></script>
     <!-- our aos data -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        var loader = document.getElementById("preloader");
+
+        window.addEventListener("load", function () {
+            loader.style.display = "none";
+        })
+    </script>
     <script>
         AOS.init({
             offset: 100,
