@@ -31,7 +31,6 @@
     background-color: #050709;
 }
 
-
 .navbar-brand {
     background: #371C6A;
     background: linear-gradient(to right, #371C6A 0%, #7D49E5 100%);
@@ -554,6 +553,20 @@
     text-align: center;
     margin-top: 5%;
 }
+
+#preloader{
+    background-color: white;
+    background-image: url(IMAGES/loader.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 50%;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
+
 
 @media only screen and (min-width:320px) and (max-width: 697px) {
     .home {
