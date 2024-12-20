@@ -27,3 +27,39 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+// Store Data On Google Form
+const form = document.querySelector('form');
+const submitButton = document.querySelector('#submit');
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  // Disable the submit button to prevent multiple submissions
+  submitButton.disabled = true;
+  submitButton.value = "Submitting..."; // Optional: Show submitting status
+
+  const formData = new FormData(form);
+  const jsonData = {};
+
+  formData.forEach((value, key) => {
+    jsonData[key] = value;
+  });
+
+  try {
+    const response = await fetch('https://script.google.com/macros/s/AKfycbzzBibNl17SlNSJcxnvCANbgDaF_eD4n3B3sRqkpw9km9k2pvKYRx2R7yJfHoPdWxKX/exec', {
+      method: 'POST',
+      body: JSON.stringify(jsonData),
+    });
+
+    const result = await response.text();
+    alert(result); // Optional: Shows "Success" if data is added successfully
+    form.reset(); // Reset form after submission
+  } catch (error) {
+    alert("An error occurred. Please try again.");
+  } finally {
+    // Re-enable the button (if necessary) after a successful or failed attempt
+    submitButton.disabled = false;
+    submitButton.value = "Submit"; // Reset button text
+  }
+});
