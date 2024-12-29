@@ -192,6 +192,7 @@
 .card .row {
     border: 1px solid #371C6A;
     align-items: center;
+    border-radius: 12px;
     transition: background-color 0.25s ease-in-out;
 }
 
@@ -237,8 +238,8 @@
 }
 
 .project-img {
-    width: 70rem;
-    height: 30rem;
+    width: 50rem;
+    height: 20rem;
     transition: transform 0.3s ease;
 }
 
@@ -262,7 +263,7 @@
 }
 
 .card-body:hover .link {
-    top: 70%;
+    top: 60%;
     opacity: 1;
     cursor: pointer;
 }
@@ -871,3 +872,4 @@
         font-size: 15px;
     }
 }
+
