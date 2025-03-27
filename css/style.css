@@ -219,12 +219,8 @@
     font-family: 'Gelasio', serif;
     color: white;
 }
-
 .works {
-    overflow: hidden;
-    height: auto;
     padding: 60px 0;
-    background: rgb(52, 30, 92);
     background: radial-gradient(circle, rgba(52, 30, 92, 1) 0%, rgba(15, 7, 21, 1) 50%);
 }
 
@@ -237,54 +233,59 @@
     font-weight: bold;
 }
 
-.project-img {
-    width: 50rem;
-    height: 20rem;
-    transition: transform 0.3s ease;
-}
-
-.project .card-body {
+.project-card {
     position: relative;
     overflow: hidden;
-    margin-top: 10%;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.link {
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+.project-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.project-overlay {
     position: absolute;
-    background: linear-gradient(113deg, rgba(50, 26, 98, 1) 0%, rgba(127, 75, 233, 1) 50%);
-    width: 91%;
-    left: 3;
-    top: 100%;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: rgba(50, 26, 98, 0.9);
+    padding: 15px;
+    text-align: center;
     color: white;
-    padding: 3%;
-    box-sizing: border-box;
-    opacity: 0;
-    transition: top 0.3s ease, opacity 0.3s ease;
+    transition: bottom 0.3s ease-in-out;
 }
 
-.card-body:hover .link {
-    top: 60%;
-    opacity: 1;
-    cursor: pointer;
+.project-card:hover .project-overlay {
+    bottom: 0;
 }
 
-.link a {
-    text-decoration: none;
-    color: white;
-}
-
-.link h1 {
+.project-overlay h2 {
     font-size: 1.5rem;
-    margin-left: 5%;
-    font-family: Lobster;
-    font-weight: bold;
+    font-family: 'Lobster', cursive;
 }
 
-.link p {
-    font-size: 10px;
-    margin-left: 5%;
-    word-spacing: 5px;
+.project-overlay p {
+    font-size: 14px;
     font-family: 'Gelasio', serif;
+}
+
+.project-overlay .btn {
+    margin-top: 10px;
+    background: #8953F7;
+    border: none;
+}
+
+.project-overlay .btn:hover {
+    background: #BD9FFB;
 }
 
 .resume {
